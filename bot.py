@@ -19,12 +19,11 @@ async def on_member_join(member):
             description="Welcome to the Frost Hacks server, We're excited to have you here!",
             color=discord.Color.green()
         )
-        gif_path = "./gif.gif"  
+        gif_path = "./assets/gif.gif"  
         if os.path.exists(gif_path):
             embed.set_thumbnail(url="attachment://" + os.path.basename(gif_path))
             await channel.send(embed=embed, file=discord.File(gif_path, filename=os.path.basename(gif_path)))
         else:
             await channel.send("GIF not found.")
-
 
 client.run(token)
