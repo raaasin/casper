@@ -1,6 +1,11 @@
+from pydoc import replace
 import discord
-from creds import token
+from creds import token,key
 import os
+import google.generativeai as genai
+
+
+genai.configure(api_key=key)
 intents = discord.Intents.default()
 intents.members = True  
 
@@ -26,4 +31,20 @@ async def on_member_join(member):
         else:
             await channel.send("GIF not found.")
 
+def get_message(message):
+    model = genai.GenerativeModel('gemini-pro')
+    chat = model.start_chat(history=[])
+    response = chat.send_message(message, stream=True)
+    response.resolve()
+    return response
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    msg=replace(message.content,"<@1187776872680009849>","")
+    answer = get_message(msg)
+    for chunk in answer:
+        await message.channel.send(chunk.text)
+    
 client.run(token)
