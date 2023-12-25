@@ -18,7 +18,7 @@ async def on_member_join(member):
 
     if channel is not None:
         embed = discord.Embed(
-            title=f"Welcome {member.display_name}!",
+            title=f"Welcome {member.mention}!",
             description="Welcome to the Frost Hacks server, We're excited to have you here!",
             color=discord.Color.purple()
         )
