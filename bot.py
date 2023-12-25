@@ -1,11 +1,7 @@
-from pydoc import replace
 import discord
-from creds import token,key
+from creds import token
 import os
-import google.generativeai as genai
 
-
-genai.configure(api_key=key)
 intents = discord.Intents.default()
 intents.members = True  
 
