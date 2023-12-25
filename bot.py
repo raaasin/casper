@@ -17,7 +17,9 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    channel = member.guild.system_channel  
+    channel_id = 1158623747205509142  
+    channel = client.get_channel(channel_id)
+
     if channel is not None:
         embed = discord.Embed(
             title=f"Welcome {member.display_name}!",
@@ -25,11 +27,13 @@ async def on_member_join(member):
             color=discord.Color.purple()
         )
         gif_path = "./assets/gif.gif"  
+
         if os.path.exists(gif_path):
             embed.set_thumbnail(url="attachment://" + os.path.basename(gif_path))
             await channel.send(embed=embed, file=discord.File(gif_path, filename=os.path.basename(gif_path)))
         else:
             await channel.send("GIF not found.")
+
 
 """
 def get_message(message):
