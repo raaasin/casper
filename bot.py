@@ -22,7 +22,7 @@ async def on_member_join(member):
         embed = discord.Embed(
             title=f"Welcome {member.display_name}!",
             description="Welcome to the Frost Hacks server, We're excited to have you here!",
-            color=discord.Color.green()
+            color=discord.Color.purple()
         )
         gif_path = "./assets/gif.gif"  
         if os.path.exists(gif_path):
@@ -31,6 +31,7 @@ async def on_member_join(member):
         else:
             await channel.send("GIF not found.")
 
+"""
 def get_message(message):
     model = genai.GenerativeModel('gemini-pro')
     chat = model.start_chat(history=[])
@@ -46,5 +47,6 @@ async def on_message(message):
     answer = get_message(msg)
     for chunk in answer:
         await message.channel.send(chunk.text)
+"""
     
 client.run(token)
