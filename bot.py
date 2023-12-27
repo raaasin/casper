@@ -54,7 +54,7 @@ welcome_messages = [
 
 @client.event
 async def on_ready():
-    print(f"{client.user} is online!")
+    print(f"{client.user} is now online!")
 
 @client.event
 async def on_member_join(member):
