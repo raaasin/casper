@@ -1,33 +1,44 @@
 # Casper - Frost Hacks Discord Bot
 
-Casper is a Discord bot tailored specifically for the Frost Hacks server. Its primary functions are to warmly greet new users joining the server and to interact seamlessly with Google's Gemini API.
+Casper is a Discord bot tailored specifically for the Frost Hacks server. Its primary function is to warmly greet new users joining the server and create an engaging environment through welcoming messages.
 
-### Features:
+## Features:
 
-#### Greeting Functionality:
+### Greeting Functionality:
 
 Upon a new user joining the server, Casper welcomes them with a personalized message in the system channel, expressing excitement about their presence within the Frost Hacks community.
-
-#### Interaction with Gemini API:
-
-Casper utilizes Google's Gemini API, a robust family of multimodal large language models, to engage in conversations with server members. This functionality allows for seamless interaction with the bot through text messages.
 
 ### How Casper Works:
 
 - **On Ready Event**: Casper notifies its online status upon successful connection to the Discord server.
-- **On Member Join Event**: Welcomes new members to the server with a personalized greeting and an optional GIF.
-- **On Message Event**: Listens for messages and interacts using Google's Gemini API. When a user sends a message, Casper processes it through the Gemini model and responds with conversational text.
+- **On Member Join Event**: Welcomes new members to the server with a randomly selected personalized greeting message from a predefined list.
 
-### Setting Up Casper:
+## Setting Up Casper:
 
 To set up Casper for your Discord server:
 
 1. Clone this repository.
 2. Install the necessary dependencies.
-3. Replace the placeholder values for `token` and `key` in the `creds.py` file with your bot token and Gemini API key, respectively.
+3. Replace the placeholder value for `token` in the `creds.py` file with your bot token.
 4. Ensure Casper has appropriate permissions within your Discord server.
 5. Run the bot.
 
-### Gemini API:
+## Customization:
 
-Google Gemini stands as the successor to LaMDA and PaLM 2, offering powerful multimodal language models. Casper leverages Gemini to engage in natural language conversations with users, providing an enriched interactive experience within the Discord server.
+Feel free to customize the list of welcome messages to suit your server's tone and community better. You can modify the messages within the `welcome_messages` list in the code.
+
+## How to Run:
+
+Run the bot by executing the Python script:
+
+```bash
+python bot.py
+```
+
+## Note:
+
+Ensure your bot has the necessary intents enabled, especially `intents.members`, to correctly handle member join events.
+
+## Credits:
+
+Casper makes use of the Discord.py library to interact with Discord APIs.
