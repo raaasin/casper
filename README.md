@@ -1,4 +1,4 @@
-# Casper - Frost Hacks Discord Bot
+# Casper - Discord Bot
 
 Casper is a Discord bot tailored specifically for the Frost Hacks server. Its primary function is to warmly greet new users joining the server and create an engaging environment through welcoming messages.
 
